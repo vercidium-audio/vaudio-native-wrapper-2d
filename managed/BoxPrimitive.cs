@@ -39,11 +39,7 @@ namespace vaudionativewrapper.managed
             set => BoxPrimitiveBindings.SetRotation(native, value).ThrowIfError();
         }
 
-        public void Destroy()
-        {
-            BoxPrimitiveBindings.Destroy(native).ThrowIfError();
-            native = IntPtr.Zero;
-        }
+        protected override VAResult DestroyNative(IntPtr native) => BoxPrimitiveBindings.Destroy(native);
 
         protected override string DebugInfo => $"material={material}, position={position}, size={size}, rotation={rotation}";
     }

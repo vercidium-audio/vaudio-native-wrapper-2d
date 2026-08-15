@@ -46,11 +46,7 @@ namespace vaudionativewrapper.managed
             set => OvalPrimitiveBindings.SetRotation(native, value).ThrowIfError();
         }
 
-        public void Destroy()
-        {
-            OvalPrimitiveBindings.Destroy(native).ThrowIfError();
-            native = IntPtr.Zero;
-        }
+        protected override VAResult DestroyNative(IntPtr native) => OvalPrimitiveBindings.Destroy(native);
 
         protected override string DebugInfo => $"material={material}, center={center}, radiusX={radiusX}, radiusY={radiusY}, rotation={rotation}";
     }

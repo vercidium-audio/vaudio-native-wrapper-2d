@@ -54,11 +54,7 @@ namespace vaudionativewrapper.managed
         /// <summary>Call this after editing grid data</summary>
         public void SetDataDirty() => GridPrimitiveBindings.SetDataDirty(native).ThrowIfError();
 
-        public void Destroy()
-        {
-            GridPrimitiveBindings.Destroy(native).ThrowIfError();
-            native = System.IntPtr.Zero;
-        }
+        protected override vaudionativewrapper.VAResult DestroyNative(System.IntPtr native) => GridPrimitiveBindings.Destroy(native);
 
         protected override string DebugInfo => $"material={material}, width={width}, height={height}, position={position}, rotation={rotation}, scale={scale}";
     }

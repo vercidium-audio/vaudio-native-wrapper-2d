@@ -32,11 +32,7 @@ namespace vaudionativewrapper.managed
             set => LinePrimitiveBindings.SetEnd(native, value).ThrowIfError();
         }
 
-        public void Destroy()
-        {
-            LinePrimitiveBindings.Destroy(native).ThrowIfError();
-            native = IntPtr.Zero;
-        }
+        protected override VAResult DestroyNative(IntPtr native) => LinePrimitiveBindings.Destroy(native);
 
         protected override string DebugInfo => $"material={material}, start={start}, end={end}";
     }

@@ -57,11 +57,7 @@ namespace vaudionativewrapper.managed
             set => PathPrimitiveBindings.SetSupportsPermeation(native, value).ThrowIfError();
         }
 
-        public void Destroy()
-        {
-            PathPrimitiveBindings.Destroy(native).ThrowIfError();
-            native = IntPtr.Zero;
-        }
+        protected override VAResult DestroyNative(IntPtr native) => PathPrimitiveBindings.Destroy(native);
 
         protected override string DebugInfo => $"material={material}, position={position}, rotation={rotation}, scale={scale}";
     }

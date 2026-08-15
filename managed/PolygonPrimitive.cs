@@ -92,11 +92,7 @@ namespace vaudionativewrapper.managed
             set => PolygonPrimitiveBindings.SetSupportsPermeation(native, value).ThrowIfError();
         }
 
-        public void Destroy()
-        {
-            PolygonPrimitiveBindings.Destroy(native).ThrowIfError();
-            native = IntPtr.Zero;
-        }
+        protected override VAResult DestroyNative(IntPtr native) => PolygonPrimitiveBindings.Destroy(native);
 
         protected override string DebugInfo => $"material={material}, position={position}, rotation={rotation}, scale={scale}";
     }
