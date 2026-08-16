@@ -92,6 +92,13 @@ namespace vaudionativewrapper.managed
             set => PolygonPrimitiveBindings.SetSupportsPermeation(native, value).ThrowIfError();
         }
 
+        /// <summary>Whether this polygon is a closed loop (an edge connects the last point back to the first) or just an open sequence of line segments. Defaults to true</summary>
+        public bool enclosed
+        {
+            get => PolygonPrimitiveBindings.GetEnclosed(native);
+            set => PolygonPrimitiveBindings.SetEnclosed(native, value).ThrowIfError();
+        }
+
         protected override VAResult DestroyNative(IntPtr native) => PolygonPrimitiveBindings.Destroy(native);
 
         protected override string DebugInfo => $"material={material}, position={position}, rotation={rotation}, scale={scale}";

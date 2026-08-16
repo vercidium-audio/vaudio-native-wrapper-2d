@@ -42,6 +42,13 @@ namespace vaudionativewrapper
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveSetSupportsPermeation")]
         public static extern VAResult SetSupportsPermeation(IntPtr primitive, bool supportsPermeation);
 
+        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveGetEnclosed")]
+        [return: MarshalAs(UnmanagedType.U1)]
+        public static extern bool GetEnclosed(IntPtr primitive);
+
+        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveSetEnclosed")]
+        public static extern VAResult SetEnclosed(IntPtr primitive, bool enclosed);
+
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveGetMaterial")]
         public static extern MaterialType GetMaterial(IntPtr primitive);
 
