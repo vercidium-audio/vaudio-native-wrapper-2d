@@ -15,13 +15,6 @@ namespace vaudionativewrapper.managed
             owns = true;
         }
 
-        /// <summary>Determines the amount of energy lost when rays bounce off this primitive, permeate through it, and scatter off it</summary>
-        public MaterialType material
-        {
-            get => PathPrimitiveBindings.GetMaterial(native);
-            set => PathPrimitiveBindings.SetMaterial(native, value).ThrowIfError();
-        }
-
         /// <summary>The local-space SVG path data, before rotation, scale and position are applied. If the path ends with Z/z it is treated as closed</summary>
         public string svgPath
         {
@@ -50,11 +43,11 @@ namespace vaudionativewrapper.managed
             set => PathPrimitiveBindings.SetScale(native, value).ThrowIfError();
         }
 
-        /// <summary>Whether this path supports entry/exit permeation raytracing (thickness-based transmission loss through its filled interior). Only meaningful for closed paths - set to true for watertight closed shapes</summary>
-        public bool supportsPermeation
+        /// <summary>Whether rays lose a flat percentage of energy the moment they touch this path, instead of calculating how long the ray spent inside it. Only meaningful to disable for closed paths (svgPath ends with Z/z) - an open path has no interior. Defaults to true, same as LinePrimitive/PolygonPrimitive</summary>
+        public bool UseFlatTransmission
         {
-            get => PathPrimitiveBindings.GetSupportsPermeation(native);
-            set => PathPrimitiveBindings.SetSupportsPermeation(native, value).ThrowIfError();
+            get => PathPrimitiveBindings.GetUseFlatTransmission(native);
+            set => PathPrimitiveBindings.SetUseFlatTransmission(native, value).ThrowIfError();
         }
 
         protected override VAResult DestroyNative(IntPtr native) => PathPrimitiveBindings.Destroy(native);

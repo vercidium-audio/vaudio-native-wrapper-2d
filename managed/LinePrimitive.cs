@@ -11,13 +11,6 @@ namespace vaudionativewrapper.managed
             owns = true;
         }
 
-        /// <summary>Determines the amount of energy lost when rays bounce off this primitive, permeate through it, and scatter off it</summary>
-        public MaterialType material
-        {
-            get => LinePrimitiveBindings.GetMaterial(native);
-            set => LinePrimitiveBindings.SetMaterial(native, value).ThrowIfError();
-        }
-
         /// <summary>Start point of the line</summary>
         public Vector start
         {

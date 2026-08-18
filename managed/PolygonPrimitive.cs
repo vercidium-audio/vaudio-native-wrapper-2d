@@ -35,13 +35,6 @@ namespace vaudionativewrapper.managed
             owns = true;
         }
 
-        /// <summary>Determines the amount of energy lost when rays bounce off this primitive, permeate through it, and scatter off it</summary>
-        public MaterialType material
-        {
-            get => PolygonPrimitiveBindings.GetMaterial(native);
-            set => PolygonPrimitiveBindings.SetMaterial(native, value).ThrowIfError();
-        }
-
         /// <summary>Local-space points of the polygon, before rotation, scale and position are applied. Must contain at least 3 points</summary>
         public Vector[] points
         {
@@ -85,11 +78,11 @@ namespace vaudionativewrapper.managed
             set => PolygonPrimitiveBindings.SetScale(native, value).ThrowIfError();
         }
 
-        /// <summary>Whether this polygon supports entry/exit permeation raytracing (thickness-based transmission loss through its filled interior). Only enable for polygons known to be convex, or where an approximate entry/exit span is acceptable</summary>
-        public bool supportsPermeation
+        /// <summary>Whether rays lose a flat percentage of energy the moment they touch this polygon, instead of calculating how long the ray spent inside it. Only meaningful to disable for enclosed polygons - an open sequence of lines has no interior. Defaults to true (concave polygons can be crossed more than twice, so there is no single lengthInside through the shape in general - only set to false for polygons you know are convex, or where an approximate entry/exit span is acceptable)</summary>
+        public bool UseFlatTransmission
         {
-            get => PolygonPrimitiveBindings.GetSupportsPermeation(native);
-            set => PolygonPrimitiveBindings.SetSupportsPermeation(native, value).ThrowIfError();
+            get => PolygonPrimitiveBindings.GetUseFlatTransmission(native);
+            set => PolygonPrimitiveBindings.SetUseFlatTransmission(native, value).ThrowIfError();
         }
 
         /// <summary>Whether this polygon is a closed loop (an edge connects the last point back to the first) or just an open sequence of line segments. Defaults to true</summary>

@@ -16,13 +16,6 @@ namespace vaudionativewrapper.managed
             owns = true;
         }
 
-        /// <summary>Determines the amount of energy lost when rays bounce off this primitive, permeate through it, and scatter off it</summary>
-        public MaterialType material
-        {
-            get => GridPrimitiveBindings.GetMaterial(native);
-            set => GridPrimitiveBindings.SetMaterial(native, value).ThrowIfError();
-        }
-
         /// <summary>Position of the grid in world space</summary>
         public Vector position
         {

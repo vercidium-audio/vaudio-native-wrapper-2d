@@ -35,12 +35,12 @@ namespace vaudionativewrapper
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveGetScale")]
         public static extern float GetScale(IntPtr primitive);
 
-        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveGetSupportsPermeation")]
+        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveGetUseFlatTransmission")]
         [return: MarshalAs(UnmanagedType.U1)]
-        public static extern bool GetSupportsPermeation(IntPtr primitive);
+        public static extern bool GetUseFlatTransmission(IntPtr primitive);
 
-        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveSetSupportsPermeation")]
-        public static extern VAResult SetSupportsPermeation(IntPtr primitive, bool supportsPermeation);
+        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveSetUseFlatTransmission")]
+        public static extern VAResult SetUseFlatTransmission(IntPtr primitive, bool useFlatTransmission);
 
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveGetEnclosed")]
         [return: MarshalAs(UnmanagedType.U1)]
@@ -48,12 +48,6 @@ namespace vaudionativewrapper
 
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveSetEnclosed")]
         public static extern VAResult SetEnclosed(IntPtr primitive, bool enclosed);
-
-        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveGetMaterial")]
-        public static extern MaterialType GetMaterial(IntPtr primitive);
-
-        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveSetMaterial")]
-        public static extern VAResult SetMaterial(IntPtr primitive, MaterialType material);
 
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPolygonPrimitiveDestroy")]
         public static extern VAResult Destroy(IntPtr primitive);
