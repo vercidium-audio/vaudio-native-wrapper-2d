@@ -5,6 +5,7 @@ namespace vaudionativewrapper.managed
     /// <summary>A straight line audio primitive with zero thickness</summary>
     public class LinePrimitive : Primitive
     {
+        /// <summary>Create a line primitive</summary>
         public LinePrimitive()
         {
             native = LinePrimitiveBindings.Create();
