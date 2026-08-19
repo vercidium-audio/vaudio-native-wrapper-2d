@@ -85,7 +85,7 @@ namespace vaudionativewrapper.managed
             set => PolygonPrimitiveBindings.SetUseFlatTransmission(native, value).ThrowIfError();
         }
 
-        /// <summary>Whether this polygon is a closed loop (an edge connects the last point back to the first) or just an open sequence of line segments. Defaults to true</summary>
+        /// <summary>Whether this polygon is a closed loop (an edge connects the last point back to the first) or just an open sequence of line segments. Defaults to true. Set to false for a polyline with no closing edge</summary>
         public bool enclosed
         {
             get => PolygonPrimitiveBindings.GetEnclosed(native);

@@ -1,5 +1,6 @@
 ﻿namespace vaudionativewrapper.managed
 {
+    /// <summary>A standalone world with its own primitives, emitters, materials and settings. Manages its own raytracing and multithreading</summary>
     public partial class World
     {
         /// <summary>The rotation of the camera in the debug window (dev build only)</summary>
@@ -9,7 +10,7 @@
             set => WorldBindings.SetCameraRotation(native, value).ThrowIfError();
         }
 
-        /// <summary>The zoom of the camera in the debug window (dev build only)</summary>
+        /// <summary>The camera zoom factor in the debug window (dev build only)</summary>
         public float CameraZoom
         {
             get => WorldBindings.GetCameraZoom(native);

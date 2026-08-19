@@ -15,7 +15,7 @@ namespace vaudionativewrapper.managed
             owns = true;
         }
 
-        /// <summary>The local-space SVG path data, before rotation, scale and position are applied. If the path ends with Z/z it is treated as closed</summary>
+        /// <summary>The local-space SVG path data (the contents of an SVG "d" attribute), before rotation, scale and position are applied. Supported commands: M/m, L/l, H/h, V/v, C/c, Q/q, Z/z (absolute and relative forms). Arcs (A/a) and smooth-curve shorthand (S/s, T/t) are not supported. If the path ends with Z/z it is treated as closed</summary>
         public string svgPath
         {
             get => PathPrimitiveBindings.GetSvgPath(native);
