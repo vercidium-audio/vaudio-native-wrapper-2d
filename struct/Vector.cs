@@ -25,5 +25,8 @@ namespace vaudionativewrapper
 
         /// <summary>The Y component</summary>
         public float Y;
+
+        /// <inheritdoc/>
+        public override string ToString() => $"({X:F3}, {Y:F4})";
     }
 }
