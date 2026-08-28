@@ -36,8 +36,8 @@ namespace vaudionativewrapper.managed
             set => PathPrimitiveBindings.SetRotation(native, value).ThrowIfError();
         }
 
-        /// <summary>Uniform scale applied to the local-space path points</summary>
-        public float scale
+        /// <summary>Per-axis scale applied to the local-space path points, before rotation and position</summary>
+        public Vector scale
         {
             get => PathPrimitiveBindings.GetScale(native);
             set => PathPrimitiveBindings.SetScale(native, value).ThrowIfError();
