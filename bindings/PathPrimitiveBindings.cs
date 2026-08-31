@@ -22,7 +22,7 @@ namespace vaudionativewrapper
         public static extern VAResult SetRotation(IntPtr primitive, float rotation);
 
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPathPrimitiveSetScale")]
-        public static extern VAResult SetScale(IntPtr primitive, float scale);
+        public static extern VAResult SetScale(IntPtr primitive, Vector scale);
 
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPathPrimitiveGetPosition")]
         public static extern Vector GetPosition(IntPtr primitive);
@@ -31,7 +31,7 @@ namespace vaudionativewrapper
         public static extern float GetRotation(IntPtr primitive);
 
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPathPrimitiveGetScale")]
-        public static extern float GetScale(IntPtr primitive);
+        public static extern Vector GetScale(IntPtr primitive);
 
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaPathPrimitiveGetUseFlatTransmission")]
         [return: MarshalAs(UnmanagedType.U1)]

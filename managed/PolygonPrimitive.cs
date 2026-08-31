@@ -71,8 +71,8 @@ namespace vaudionativewrapper.managed
             set => PolygonPrimitiveBindings.SetRotation(native, value).ThrowIfError();
         }
 
-        /// <summary>Uniform scale applied to the local-space points</summary>
-        public float scale
+        /// <summary>Per-axis scale applied to the local-space points, before rotation and position</summary>
+        public Vector scale
         {
             get => PolygonPrimitiveBindings.GetScale(native);
             set => PolygonPrimitiveBindings.SetScale(native, value).ThrowIfError();
