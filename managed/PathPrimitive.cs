@@ -22,7 +22,7 @@ namespace vaudionativewrapper.managed
             set => PathPrimitiveBindings.SetSvgPath(native, value).ThrowIfError();
         }
 
-        /// <summary>Position of the primitive in world space</summary>
+        /// <summary>Position of the path in world space</summary>
         public Vector position
         {
             get => PathPrimitiveBindings.GetPosition(native);

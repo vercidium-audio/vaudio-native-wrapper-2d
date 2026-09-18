@@ -11,7 +11,7 @@ namespace vaudionativewrapper.managed
             owns = true;
         }
 
-        /// <summary>Center position of the oval in world space</summary>
+        /// <summary>Center of the oval in world space</summary>
         public Vector center
         {
             get => OvalPrimitiveBindings.GetCenter(native);
