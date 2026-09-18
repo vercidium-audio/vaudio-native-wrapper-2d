@@ -2,7 +2,7 @@ using System;
 
 namespace vaudionativewrapper.managed
 {
-    /// <summary>A solid circular audio primitive</summary>
+    /// <summary>A circle primitive</summary>
     public class CirclePrimitive : Primitive
     {
         public CirclePrimitive()

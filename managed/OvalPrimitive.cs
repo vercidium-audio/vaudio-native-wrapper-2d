@@ -2,7 +2,7 @@ using System;
 
 namespace vaudionativewrapper.managed
 {
-    /// <summary>A solid elliptical audio primitive</summary>
+    /// <summary>An oval primitive</summary>
     public class OvalPrimitive : Primitive
     {
         public OvalPrimitive()
@@ -32,7 +32,7 @@ namespace vaudionativewrapper.managed
             set => OvalPrimitiveBindings.SetRadiusY(native, value).ThrowIfError();
         }
 
-        /// <summary>Rotation of the oval in radians, applied around its center</summary>
+        /// <summary>Rotation of the oval in radians</summary>
         public float rotation
         {
             get => OvalPrimitiveBindings.GetRotation(native);
