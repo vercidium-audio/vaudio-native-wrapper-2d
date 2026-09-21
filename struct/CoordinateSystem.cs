@@ -1,7 +1,7 @@
 namespace vaudionativewrapper
 {
     /// <summary>
-    /// Coordinate system used for the debug window and for calculating listener-relative reverb directionality.
+    /// Coordinate system used by the debug window and for calculating listener-relative reverb directionality.
     /// Internally, this SDK always computes in a space with Y+ up and X+ right
     /// </summary>
     public enum CoordinateSystem

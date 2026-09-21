@@ -2,7 +2,7 @@ using System;
 
 namespace vaudionativewrapper.managed
 {
-    /// <summary>A solid circular audio primitive</summary>
+    /// <summary>A circle primitive</summary>
     public class CirclePrimitive : Primitive
     {
         public CirclePrimitive()
@@ -11,7 +11,7 @@ namespace vaudionativewrapper.managed
             owns = true;
         }
 
-        /// <summary>Center position of the circle in world space</summary>
+        /// <summary>Center of the circle in world space</summary>
         public Vector center
         {
             get => CirclePrimitiveBindings.GetCenter(native);

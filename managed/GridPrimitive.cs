@@ -6,7 +6,7 @@ namespace vaudionativewrapper.managed
         public readonly int width;
         public readonly int height;
 
-        /// <summary>Create a new grid primitive with the specified grid size</summary>
+        /// <summary>Create a new grid primitive with the specified size</summary>
         public GridPrimitive(int width, int height)
         {
             this.width = width;
@@ -23,7 +23,7 @@ namespace vaudionativewrapper.managed
             set => GridPrimitiveBindings.SetPosition(native, value).ThrowIfError();
         }
 
-        /// <summary>Rotation of the grid in radians, applied around its position</summary>
+        /// <summary>Rotation of the grid in radians</summary>
         public float rotation
         {
             get => GridPrimitiveBindings.GetRotation(native);

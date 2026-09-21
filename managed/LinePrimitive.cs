@@ -2,7 +2,7 @@ using System;
 
 namespace vaudionativewrapper.managed
 {
-    /// <summary>A straight line audio primitive with zero thickness</summary>
+    /// <summary>A straight line primitive with zero thickness</summary>
     public class LinePrimitive : Primitive
     {
         /// <summary>Create a line primitive</summary>
@@ -12,14 +12,14 @@ namespace vaudionativewrapper.managed
             owns = true;
         }
 
-        /// <summary>Start point of the line</summary>
+        /// <summary>Start position of the line in world space</summary>
         public Vector start
         {
             get => LinePrimitiveBindings.GetStart(native);
             set => LinePrimitiveBindings.SetStart(native, value).ThrowIfError();
         }
 
-        /// <summary>End point of the line</summary>
+        /// <summary>End position of the line in world space</summary>
         public Vector end
         {
             get => LinePrimitiveBindings.GetEnd(native);

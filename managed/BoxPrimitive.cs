@@ -2,7 +2,7 @@ using System;
 
 namespace vaudionativewrapper.managed
 {
-    /// <summary>A solid rectangular audio primitive</summary>
+    /// <summary>A box primitive</summary>
     public class BoxPrimitive : Primitive
     {
         public BoxPrimitive()
