@@ -16,7 +16,13 @@ namespace vaudionativewrapper
         public static extern VAResult SetCameraZoom(IntPtr world, float zoom);
 
         [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaWorldCalculateListenerRelativePan")]
-        public static extern Vector CalculateListenerRelativePan(IntPtr ctx, Vector worldVector, float listenerYaw);
+        public static extern Vector CalculateListenerRelativePan(IntPtr ctx, Vector worldVector, float listenerRotation);
+
+        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaWorldConvertWorldToListenerDirection")]
+        public static extern Vector ConvertWorldToListenerDirection(IntPtr ctx, Vector worldDirection, float listenerRotation);
+
+        [DllImport(Constants.DLL_NAME, CallingConvention = CallingConvention.Cdecl, EntryPoint = "vaWorldConvertListenerToWorldDirection")]
+        public static extern Vector ConvertListenerToWorldDirection(IntPtr ctx, Vector listenerDirection, float listenerRotation);
 
     }
 }
