@@ -1,5 +1,8 @@
 # Vercidium Audio
 
+> [!WARNING]
+> This repository has been deprecated. Please use the new [vaudio-native-wrapper](https://github.com/vercidium-audio/vaudio-native-wrapper) repo
+
 This is a .NET Standard 2.1 wrapper for the 2D Vercidium Audio C SDK.
 
 This repository requires:
